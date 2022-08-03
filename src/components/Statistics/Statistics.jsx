@@ -6,11 +6,11 @@ import { StatSection,StatTitle ,StatsList,StatsItem,FromatInfo,PercentRating} fr
 export const Statistics = ({ title, stats }) => (
       <StatSection>
   <StatTitle >{title}</StatTitle>
-        <StatsList > {stats.map(stat => (<StatsItem key={stat.id}>
-            <FromatInfo >{stat.label}</FromatInfo>
-            <PercentRating >{stat.percentage}%</PercentRating>
+    <StatsList > {stats.map(({ id, label, percentage }) => (<StatsItem key={id}>
+            <FromatInfo >{label}</FromatInfo>
+            <PercentRating >{percentage}%</PercentRating>
         </StatsItem>))}</StatsList>
-</StatSection>
+</StatSection >
 )
 
 Statistics.propTypes = {

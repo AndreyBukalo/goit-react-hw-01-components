@@ -10,20 +10,23 @@ margin-left:auto;
 margin-right:auto;
 margin-top:60px;
 padding:0;
-padding-top:35px;
 
 `
 
 export const FriendAvatar = styled.img`
-width: 80px;
-border-radius: 100px;
+width: 65px;
+background-color:white;
+border-radius: 25px
 `
 
 export const FriendInfo = styled.li`
 display:flex;
-width : 100%;
-margin-bottom:25px;
+width:320px;
+height:80px;
+:not(:last-child) {
+margin-bottom:25px;};
 align-items: center;
+background-color:RGBA(255,238,140,0.4);
 border:1px solid RGBA(0,0,0,0.15);
 box-shadow: 3px 10px 26px 4px rgba(140,133,133,0.75);
 `
@@ -32,9 +35,9 @@ export const FriendStatus = styled.span`
   width: 25px;
   margin-left:15px;
   margin-right:15px;
-  background-color:red;
   border-radius: 50%;
   display: inline-block;
+   background-color: ${color => (color.isOnline ? 'green' : 'red')}
 
 `
 export const FriendsName = styled.p`
