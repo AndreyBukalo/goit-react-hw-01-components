@@ -1,7 +1,9 @@
 import React from 'react'
 import user from '../components/ProfileCard/user.json'
-import {ProfileCard} from './ProfileCard/Card.jsx'
-console.log(user)
+import statisticsData from '../components/Statistics/data.json'
+import { ProfileCard } from './ProfileCard/Card.jsx'
+import {Statistics} from './Statistics/Statistics'
+
 
 export const App = () => (
   <>
@@ -10,6 +12,10 @@ export const App = () => (
     tag={user.tag}
   location={user.location}
   avatar={user.avatar}
-  stats={user.stats}/>
+      stats={user.stats} />
+    
+    <Statistics title="Upload stats" stats={statisticsData} />
+
   </>
+ 
 );

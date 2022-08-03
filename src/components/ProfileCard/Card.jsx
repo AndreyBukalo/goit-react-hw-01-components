@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
+import PropTypes from 'prop-types';
 import {Wrapper,Description,UserAvatar,UserTitle,UserInfoText,Stats,StatsList,StatsNumbers} from './Card.styled'
 
-export const ProfileCard = ( { username, tag, location, avatar,stats:{followers,views,likes} })  => {
+export const ProfileCard = ( { username, tag, location, avatar,stats:{ followers,views,likes } })  => {
  return <Wrapper>
   <Description>
     <UserAvatar src={avatar} alt="avatar"
@@ -25,4 +26,19 @@ export const ProfileCard = ( { username, tag, location, avatar,stats:{followers,
     </StatsList>
   </Stats>
 </Wrapper>
+}
+
+ProfileCard.propTypes = {
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.exact({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes:PropTypes.number.isRequired,
+        
+
+    })
+
 }
