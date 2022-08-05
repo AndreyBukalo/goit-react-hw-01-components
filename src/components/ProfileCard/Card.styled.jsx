@@ -1,42 +1,26 @@
 import styled from '@emotion/styled'
 
-export const Wrapper = styled.div`
-width:320px;
-display:flex;
-flex-direction:column;
-align-items:center;
-margin-left:auto;
-margin-right:auto;
-margin-top:60px;
-padding-top:35px;
-box-shadow: 3px 10px 26px 4px rgba(140,133,133,0.75);
-`
 
-export const Description = styled.div`
-display:flex;
-flex-direction:column;
-align-items:center;
-`
 export const UserAvatar = styled.img`
 width: 120px;
-border-radius: 200px;
+border-radius: ${p => p.theme.radii.round};
 `
 
 export const UserTitle = styled.p`
-font-size:24px;
-font-weight:500;
-margin-bottom:0px;
-`
+font-size:${p => p.theme.fontSizes.xm};
+font-weight:${p => p.theme.fontWeights.middle};
+margin-bottom:${p => p.theme.space[0]}px;`
+
 export const UserInfoText = styled.p`
-margin-bottom:0px;
-font-size:16px;
-color:RGBA(0,0,0,0.37)`;
+margin-bottom:${p => p.theme.space[0]}px;
+font-size:${p => p.theme.fontSizes.m};
+color:${p => p.theme.colors.cardSecondTextColor}`;
 
 export const Stats = styled.ul`
 display:flex;
-padding:0;
+padding:${p => p.theme.space[0]}px;
 list-style:none;
-margin-bottom:0;`;
+margin-bottom:${p => p.theme.space[0]}px`;
 
 export const StatsList = styled.li`
 display:flex;
@@ -44,11 +28,11 @@ flex-direction:column;
 align-items: center;
 width:105px;
 height:80px;
-border:1px solid RGBA(0,0,0,0.15);
-background-color: RGBA(0,0,0,0.06);
+border:${p => p.theme.borders.normal} ${p => p.theme.colors.borderColor};
+background-color:${p => p.theme.colors.backgroundColorCard};
 `
 export const StatsNumbers = styled.span`
-font-size: 18px;
-font-weight:500;
+font-size: ${p => p.theme.fontSizes.m};
+font-weight:${p => p.theme.fontWeights.middle};
 margin-top:5px;
 `

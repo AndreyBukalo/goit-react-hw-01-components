@@ -1,16 +1,25 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { StatSection,StatTitle ,StatsList,StatsItem,FromatInfo,PercentRating} from "./Statistics.styled";
-
+import { StatTitle ,StatsList,StatsItem,FromatInfo,PercentRating} from "./Statistics.styled";
+import { Box } from "components/Box";
 
 export const Statistics = ({ title, stats }) => (
-      <StatSection>
+  <Box width={320}
+    display="flex"
+    flexDirection="column"
+    alignItems="center"
+    ml="auto"
+    mr="auto"
+    mt="45px"
+    mb="45px"
+    boxShadow="custom"
+  as="section">
   <StatTitle >{title}</StatTitle>
     <StatsList > {stats.map(({ id, label, percentage }) => (<StatsItem key={id}>
             <FromatInfo >{label}</FromatInfo>
             <PercentRating >{percentage}%</PercentRating>
         </StatsItem>))}</StatsList>
-</StatSection >
+</Box >
 )
 
 Statistics.propTypes = {

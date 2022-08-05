@@ -8,20 +8,20 @@ import { Statistics } from './Statistics/Statistics'
 import { FriendList } from './FriendList/FriendList'
 import { TransactionHistory } from './TransactionHistory/Transaction'
 
+
+
 export const App = () => (
   <>
-    <ProfileCard
+ <ProfileCard
       username={user.username}
     tag={user.tag}
   location={user.location}
   avatar={user.avatar}
       stats={user.stats} />
-    
     <Statistics title="Upload stats" stats={statisticsData} />
-    <FriendList friends={friends}
-       />
-    
-    <TransactionHistory transactions={transactions} />
-  </>
+    <FriendList friends={friends}/>
+      <TransactionHistory transactions={transactions} />
  
+  </>
+
 );

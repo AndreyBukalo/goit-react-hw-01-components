@@ -1,49 +1,38 @@
 import styled from "@emotion/styled";
 
-export const FriendListStyle = styled.ul`
-width:320px;
-display:flex;
-flex-direction:column;
-align-items:flex-start;
-list-style:none;
-margin-left:auto;
-margin-right:auto;
-margin-top:60px;
-padding:0;
 
-`
 
 export const FriendAvatar = styled.img`
 width: 65px;
-background-color:white;
-border-radius: 25px
+background-color:${p=> p.theme.colors.white};
+border-radius:${p=> p.theme.radii.round};
 `
 
 export const FriendInfo = styled.li`
 display:flex;
-width:320px;
+width:100%;
 height:80px;
 :not(:last-child) {
-margin-bottom:25px;};
+margin-bottom:${p=> p.theme.space[5]}px;};
 align-items: center;
-background-color:RGBA(255,238,140,0.4);
-border:1px solid RGBA(0,0,0,0.15);
-box-shadow: 3px 10px 26px 4px rgba(140,133,133,0.75);
+background-color:${p=> p.theme.colors.friendsCardColor};
+border:${p => p.theme.borders.normal} ${p => p.theme.colors.borderColor};
+box-shadow: ${p=> p.theme.shadows.custom};
 `
 export const FriendStatus = styled.span`
  height: 25px;
   width: 25px;
-  margin-left:15px;
-  margin-right:15px;
-  border-radius: 50%;
+  margin-left:${p=> p.theme.space[4]}px;
+  margin-right:${p=> p.theme.space[4]}px;
+  border-radius: ${p=> p.theme.radii.round};
   display: inline-block;
-   background-color: ${color => (color.isOnline ? 'green' : 'red')}
+   background-color: ${p=> (p.isOnline ? 'green' : 'red')}
 
 `
 export const FriendsName = styled.p`
-font-size:22px;
-margin:0;
-margin-left:20px;
-font-weight:500;
-margin-bottom:0px;
+font-size:${p=> p.theme.fontSizes.xml};
+margin:${p=> p.theme.space[0]}px;
+margin-left:${p=> p.theme.space[5]}px;
+font-weight:${p=> p.theme.fontWeights.middle};
+
 `

@@ -1,16 +1,28 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import {Wrapper,Description,UserAvatar,UserTitle,UserInfoText,Stats,StatsList,StatsNumbers} from './Card.styled'
+import {UserAvatar,UserTitle,UserInfoText,Stats,StatsList,StatsNumbers} from './Card.styled'
+import { Box } from "components/Box";
+
+
+
 
 export const ProfileCard = ( { username, tag, location, avatar,stats:{ followers,views,likes } })  => {
- return <Wrapper>
-  <Description>
+  return <Box width={320}
+    display="flex"
+    flexDirection="column"
+    alignItems="center"
+    ml="auto"
+    mr="auto"
+  boxShadow="custom">
+    <Box display="flex"
+      flexDirection="column"
+    alignItems="center">
     <UserAvatar src={avatar} alt="avatar"
     />
     <UserTitle> {username}</UserTitle>
     <UserInfoText>{tag}</UserInfoText>
     <UserInfoText>{location}</UserInfoText>
-  </Description>
+  </Box>
  <Stats>
     <StatsList>
       <UserInfoText>Followers</UserInfoText>
@@ -25,7 +37,7 @@ export const ProfileCard = ( { username, tag, location, avatar,stats:{ followers
       <StatsNumbers >{likes}</StatsNumbers>
     </StatsList>
   </Stats>
-</Wrapper>
+</Box>
 }
 
 ProfileCard.propTypes = {

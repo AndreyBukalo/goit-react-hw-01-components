@@ -1,11 +1,17 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Table,TableTitle,TableHeader,TransactionRow,TransactionDetails } from "./Transaction.styled";
-
+import { TableTitle,TableHeader,TransactionRow,TransactionDetails } from "./Transaction.styled";
+import { Box } from "components/Box";
 
 export const TransactionHistory = ({ transactions }) => {
     return (
-        <Table>
+        <Box as="table"
+            width={480}
+            ml="auto"
+            mr="auto"
+            mt="60px"
+            p="0"
+        boxShadow="custom">
             <thead>
                 <TableHeader>
                     <TableTitle>Type</TableTitle>
@@ -23,7 +29,7 @@ export const TransactionHistory = ({ transactions }) => {
                         </TransactionRow>
                     );
                 })}</tbody>
-        </Table>);
+        </Box>);
 };
 
 TransactionHistory.propTypes = { 
